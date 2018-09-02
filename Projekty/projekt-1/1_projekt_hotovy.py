@@ -1,4 +1,4 @@
-''' 
+'''
 1. projekt - 5 bodov
 
 Napíšte program (skript v Pythone), ktorý bude vyrábať vizitky pre vašu firmu, napr. v takomto tvare
