@@ -126,6 +126,7 @@ def zapisSuboru(subor):
             riadok = subor.readline()
             riadok = riadok.strip()
             polezRiadka = riadok.split('\t')
+
             zoznamKnih.append(polezRiadka)
     subor.close()
     zoznamKnih.pop()
@@ -150,7 +151,8 @@ def rozsahRokov():
     for i in range(len(datumyRozdelene)):
         for j in range(int(zaciatok), int(koniec)+1):
             if str(j) == datumyRozdelene[i][2]:
-                print ('  ',pole[i][0],', by',pole[i][1],'(',pole[i][3],')')
+                riadok = '  ' + pole[i][0] + ',' + ' by' + pole[i][1] + ',' + ' (' + pole[i][3] + ')'
+                print(riadok)
                 pocet += 1
     print()
     print('Pocet najdenych titulov = ', pocet)
@@ -228,13 +230,6 @@ while vstup != 'K':
         menoAutora()
     elif vstup == '4':
         titul()
-    elif vstup == 'k' or vstup == 'K':
-        print()
-        print('*****************************')
-        print('Dakujeme za pouzitie programu')
-        print('*****************************')
-        input()
-        break
     else:
         print()
         print('************************************************')
@@ -243,3 +238,9 @@ while vstup != 'K':
         print()
 
     vstup = vyberMenu()
+
+print()
+print('*****************************')
+print('Dakujeme za pouzitie programu')
+print('*****************************')
+input()
