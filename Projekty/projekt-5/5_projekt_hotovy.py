@@ -21,7 +21,7 @@ Po skonštruovaní zoznamu kníh, program zobrazí ponuku možností a umožní 
     Hľadanie kníh nejakého autora: Zobrazí sa výzva na zadanie reťazca, potom vypíše všetky knihy, ktorých autor obsahuje tento reťazec (bez ohľadu na veľkosť písmen).
     Napríklad, ak používateľ zadá "ST", vypíšu sa všetky knihy, ktorých meno autora obsahuje reťazec "ST", "St", "sT" alebo "st".
     Hľadanie názvu: Zobrazí sa výzva na zadanie reťazca, potom vypíše všetky knihy, ktorých názov obsahuje tento reťazec (bez ohľadu na veľkosť písmen).
-    Napríklad, ak používateľ zadá "secret", najdú sa tri knihy: "The Secret of Santa Vittoria" od Roberta Crichtona, "The Secret Pilgrim" od Johna le Carré a "Harry Potter and the Chamber of Secrets". 
+    Napríklad, ak používateľ zadá "secret", najdú sa tri knihy: "The Secret of Santa Vittoria" od Roberta Crichtona, "The Secret Pilgrim" od Johna le Carré a "Harry Potter and the Chamber of Secrets".
 
 Poznámky
 
@@ -32,7 +32,7 @@ Poznámky
     Ak nejakému dotazu nevyhovujú žiadne knihy, program by mal o tom vypísať nejakú správu.
     Váš program bude pokračovať, kým používateľ nezadá "K" (alebo "k") ako svoju voľbu.
     Váš program by mal žiadať len také vstupy, ktoré súvisia s požadovanou voľbou.
-    Váš program správne spracuje aj chybné vstupy od používateľa. Ak sa pri zadávaní vstupu vyskytnú nejaké problémy, program na to upozorní a umožní užívateľovi vybrať inú možnosť. 
+    Váš program správne spracuje aj chybné vstupy od používateľa. Ak sa pri zadávaní vstupu vyskytnú nejaké problémy, program na to upozorní a umožní užívateľovi vybrať inú možnosť.
 
 Ukážkový výstup
 
@@ -130,12 +130,12 @@ def zapisSuboru(subor):
     subor.close()
     zoznamKnih.pop()
     return zoznamKnih
-            
+
 #funkcia vypise knihy zo suboru podla zadanych rokov
 def rozsahRokov():
     zaciatok = input('zadaj startovy rok: ')
     koniec = input('zadaj koncovy rok: ')
-    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
+    pole = zapisSuboru('/Users/Tomik/Downloads/learning-python/Projekty/projekt-5/5_projekt_bestsellers.txt')
     print('\nToto su vsetky tituly v rokoch medzi', zaciatok, ' a ', koniec, ':\n')
     # nasledujuce dva for cykly vyberu z pola zoznamKnih datum a potom rozdelia na pole z 3 prvkov - mesiac, den a rok( napr.
     # datumy = ['8/30/2000', '9/24/1978', atd a potom datumyRozdelene=[['8','30','2000'],['9','24','1978'], atd...)
@@ -159,8 +159,8 @@ def rozsahRokov():
 #funkcia vypise knihy zo suboru podla mena autora (moze byt zadany aj malymi pismenami)
 def menoAutora():
     menoAutora = input('Zadaj meno autora (alebo časť mena): ')
-    menoAutora = menoAutora.lower() 
-    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
+    menoAutora = menoAutora.lower()
+    pole = zapisSuboru('/Users/Tomik/Downloads/learning-python/Projekty/projekt-5/5_projekt_bestsellers.txt')
     print('\nToto su vsetky tituly od autora', menoAutora, ':\n')
     pocet = 0
     for i in range(len(pole)):
@@ -177,7 +177,7 @@ def menoAutora():
 def mesiacRok():
     mesiac = input('Zadaj mesiac (ako číslo 1-12): ')
     rok = input('zadaj rok: ')
-    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
+    pole = zapisSuboru('/Users/Tomik/Downloads/learning-python/Projekty/projekt-5/5_projekt_bestsellers.txt')
     print('\nToto su vsetky tituly v ', mesiac, '. mesiaci a v ' , rok,  'roku :\n')
     # nasledujuce dva for cykly vyberu z pola zoznamKnih datum a potom rozdelia na pole z 3 prvkov - mesiac, den a rok( napr.
     # datumy = ['8/30/2000', '9/24/1978', atd a potom datumyRozdelene=[['8','30','2000'],['9','24','1978'], atd...)
@@ -196,12 +196,12 @@ def mesiacRok():
     print()
     print('Pocet najdenych titulov = ', pocet)
     print()
-    
+
 #funkcia vypise knihy zo suboru podla nazvu knihy (moze byt zadany aj malymi pismenami)
 def titul():
     titul = input('Zadaj titul (alebo časť titulu): ')
     titul = titul.lower()
-    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
+    pole = zapisSuboru('/Users/Tomik/Downloads/learning-python/Projekty/projekt-5/5_projekt_bestsellers.txt')
     print('\nToto su vsetky tituly ', titul, ':\n')
     pocet = 0
     for i in range(len(pole)):
@@ -214,9 +214,11 @@ def titul():
     print('Pocet najdenych titulov = ', pocet)
     print()
 
-for i in range (200):
+def vyberMenu():
+    return input('\nČo chceš robiť?\n 1: Vyhľadávať podľa rokov\n 2: Vyhľadávať podľa mesiaca a roku\n 3: Vyhľadávať podľa autora\n 4: Vyhľadávať podľa titulu\n K: Koniec\n>')
 
-    vstup = input('\nČo chceš robiť?\n 1: Vyhľadávať podľa rokov\n 2: Vyhľadávať podľa mesiaca a roku\n 3: Vyhľadávať podľa autora\n 4: Vyhľadávať podľa titulu\n K: Koniec\n>')
+vstup = vyberMenu()
+while vstup != 'K':
 
     if  vstup == '1':
         rozsahRokov()
@@ -232,10 +234,12 @@ for i in range (200):
         print('Dakujeme za pouzitie programu')
         print('*****************************')
         input()
-        break 
+        break
     else:
         print()
         print('************************************************')
         print('Prosim zadajte polozku z menu - 1,2,3,4, alebo K')
         print('************************************************')
         print()
+
+    vstup = vyberMenu()
