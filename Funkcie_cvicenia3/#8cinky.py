@@ -1,4 +1,4 @@
-''' 
+'''
 #8
 Napíšte dve funkcie: najprv funkciu kruh(r, x, y), ktorá nakreslí čierny kruh s polomerom r a so stredom (x,y). Potom funkciu cinky(x, y), ktorá nakreslí činky, t.j. dva čierne kruhy s priemerom 50, medzi ktorými je hrubá čierna tyč, kruhy sú navzájom vzdialené 50 a stred tyče má súradnice (x, y). Na kreslenie kruhov musíte použiť vašu funkciu kruh(...)
 
