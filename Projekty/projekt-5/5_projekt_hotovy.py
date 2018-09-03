@@ -113,11 +113,25 @@ Váš odovzdaný program musí začínať tromi riadkami komentárov:
 
 Používajte len také konštrukcie jazyka Python, ktoré sme sa zatiaľ učili. '''
 
+
+
+
+
+
+
+
+
 # 5. projekt: bestseller
 # autor: Rasta5man king KovaK
 # dátum: 10.8.2018
+# tomas radic - cesta pre spravne fungovanie : /Users/Tomik/Downloads/learning-python/Projekty/projekt-5/5_projekt_bestsellers.txt
 
-# nacita zoznam knih zo suboru do pola (polozky pola su polia s hodnotami - 0=nazov knihy, 1=autor, 2=vydavatelstvo, 3=datum, 4=fiction )
+
+
+
+
+
+# funkcia nacita zoznam knih zo suboru do pola (polozky pola su polia s hodnotami - 0=nazov knihy, 1=autor, 2=vydavatelstvo, 3=datum, 4=fiction )
 def zapisSuboru(subor):
     zoznamKnih=[]
     with open(subor) as subor:
@@ -126,17 +140,17 @@ def zapisSuboru(subor):
             riadok = subor.readline()
             riadok = riadok.strip()
             polezRiadka = riadok.split('\t')
-
             zoznamKnih.append(polezRiadka)
     subor.close()
     zoznamKnih.pop()
     return zoznamKnih
 
+
 #funkcia vypise knihy zo suboru podla zadanych rokov
 def rozsahRokov():
     zaciatok = input('zadaj startovy rok: ')
     koniec = input('zadaj koncovy rok: ')
-    pole = zapisSuboru('/Users/Tomik/Downloads/learning-python/Projekty/projekt-5/5_projekt_bestsellers.txt')
+    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
     print('\nToto su vsetky tituly v rokoch medzi', zaciatok, ' a ', koniec, ':\n')
     # nasledujuce dva for cykly vyberu z pola zoznamKnih datum a potom rozdelia na pole z 3 prvkov - mesiac, den a rok( napr.
     # datumy = ['8/30/2000', '9/24/1978', atd a potom datumyRozdelene=[['8','30','2000'],['9','24','1978'], atd...)
@@ -151,35 +165,38 @@ def rozsahRokov():
     for i in range(len(datumyRozdelene)):
         for j in range(int(zaciatok), int(koniec)+1):
             if str(j) == datumyRozdelene[i][2]:
-                riadok = '  ' + pole[i][0] + ',' + ' by' + pole[i][1] + ',' + ' (' + pole[i][3] + ')'
-                print(riadok)
+                vypisTitulov = '  ' + pole[i][0] + ',' + ' by ' + pole[i][1] + ',' + ' (' + pole[i][3] + ')'
+                print(vypisTitulov)
                 pocet += 1
     print()
     print('Pocet najdenych titulov = ', pocet)
     print()
 
+
 #funkcia vypise knihy zo suboru podla mena autora (moze byt zadany aj malymi pismenami)
 def menoAutora():
     menoAutora = input('Zadaj meno autora (alebo časť mena): ')
     menoAutora = menoAutora.lower()
-    pole = zapisSuboru('/Users/Tomik/Downloads/learning-python/Projekty/projekt-5/5_projekt_bestsellers.txt')
+    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
     print('\nToto su vsetky tituly od autora', menoAutora, ':\n')
     pocet = 0
     for i in range(len(pole)):
         retazec = pole[i][1]
         retazec = retazec.lower()
         if menoAutora in retazec:
-            print ('  ',pole[i][0],', by',pole[i][1],'(',pole[i][3],')')
+            vypisTitulov = '  ' + pole[i][0] + ',' + ' by ' + pole[i][1] + ',' + ' (' + pole[i][3] + ')'
+            print(vypisTitulov)
             pocet += 1
     print()
     print(' Pocet najdenych titulov = ', pocet)
     print()
 
+
 #funkcia vypise knihy zo suboru podla mesiaca a roku
 def mesiacRok():
     mesiac = input('Zadaj mesiac (ako číslo 1-12): ')
     rok = input('zadaj rok: ')
-    pole = zapisSuboru('/Users/Tomik/Downloads/learning-python/Projekty/projekt-5/5_projekt_bestsellers.txt')
+    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
     print('\nToto su vsetky tituly v ', mesiac, '. mesiaci a v ' , rok,  'roku :\n')
     # nasledujuce dva for cykly vyberu z pola zoznamKnih datum a potom rozdelia na pole z 3 prvkov - mesiac, den a rok( napr.
     # datumy = ['8/30/2000', '9/24/1978', atd a potom datumyRozdelene=[['8','30','2000'],['9','24','1978'], atd...)
@@ -193,35 +210,40 @@ def mesiacRok():
         datumyRozdelene.append(retazec)
     for i in range(len(datumyRozdelene)):
         if mesiac == datumyRozdelene[i][0] and rok == datumyRozdelene[i][2]:
-            print ('  ',pole[i][0],', by',pole[i][1],'(',pole[i][3],')')
+            vypisTitulov = '  ' + pole[i][0] + ',' + ' by ' + pole[i][1] + ',' + ' (' + pole[i][3] + ')'
+            print(vypisTitulov)
             pocet += 1
     print()
     print('Pocet najdenych titulov = ', pocet)
     print()
 
+
 #funkcia vypise knihy zo suboru podla nazvu knihy (moze byt zadany aj malymi pismenami)
 def titul():
     titul = input('Zadaj titul (alebo časť titulu): ')
     titul = titul.lower()
-    pole = zapisSuboru('/Users/Tomik/Downloads/learning-python/Projekty/projekt-5/5_projekt_bestsellers.txt')
+    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
     print('\nToto su vsetky tituly ', titul, ':\n')
     pocet = 0
     for i in range(len(pole)):
         retazec = pole[i][0]
         retazec = retazec.lower()
         if titul in retazec:
-            print ('  ',pole[i][0],', by',pole[i][1],'(',pole[i][3],')'  )
+            vypisTitulov = '  ' + pole[i][0] + ',' + ' by ' + pole[i][1] + ',' + ' (' + pole[i][3] + ')'
+            print(vypisTitulov)
             pocet += 1
     print()
     print('Pocet najdenych titulov = ', pocet)
     print()
 
+
+# funkcia pyta vstupne zadanie od pouzivatela
 def vyberMenu():
     return input('\nČo chceš robiť?\n 1: Vyhľadávať podľa rokov\n 2: Vyhľadávať podľa mesiaca a roku\n 3: Vyhľadávať podľa autora\n 4: Vyhľadávať podľa titulu\n K: Koniec\n>')
 
+
 vstup = vyberMenu()
 while vstup != 'K':
-
     if  vstup == '1':
         rozsahRokov()
     elif vstup == '2':
@@ -230,14 +252,16 @@ while vstup != 'K':
         menoAutora()
     elif vstup == '4':
         titul()
+    elif vstup == 'k':
+        break
     else:
         print()
         print('************************************************')
         print('Prosim zadajte polozku z menu - 1,2,3,4, alebo K')
         print('************************************************')
         print()
-
     vstup = vyberMenu()
+
 
 print()
 print('*****************************')
