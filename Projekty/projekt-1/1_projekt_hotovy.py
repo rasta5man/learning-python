@@ -24,6 +24,12 @@ musí byť medzera a tiež medzi radmi vizitiek musí byť 1 riadok voľný.
 # autor: Rastislav Kovac
 # dátum: 25.9.2013
 
+
+
+
+
+
+
 pocetVizitiek = int(input('zadaj pocet vizitiek: '))
 sirkaTlace = int(input('zadaj sirku tlace: '))
 pocetVizitiekNaRiadok = sirkaTlace // 34 #dlzka vizitky + medzera
@@ -73,3 +79,4 @@ print()
 for i in range(pocetVizitiek):
     print('+-------------------------------+' ,end = ' ')
 print()
+input()
