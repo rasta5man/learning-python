@@ -53,6 +53,15 @@ Váš odovzdaný program musí začínať tromi riadkami komentárov:
 Používajte len také konštrukcie jazyka Python, ktoré sme sa zatiaľ učili. Nepoužívajte napr. zoznamy a ani iné štruktúry.
 '''
 
+
+
+
+
+
+
+
+
+# spusiaca funkcia 
 def kalendar(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     dobryDatum(den, mesiac, rok, inyDen, inyMesiac, inyRok)
     menoMesiaca(den, mesiac, rok, inyDen, inyMesiac, inyRok)
@@ -60,10 +69,11 @@ def kalendar(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     pocetDnivMesiaci(den, mesiac, rok, inyDen, inyMesiac, inyRok)
     vypisKalendara(den, mesiac, rok, inyDen, inyMesiac, inyRok)
     menoDna(den, mesiac, rok, inyDen, inyMesiac, inyRok)
-    
+
+
+
+# funkcia skontroluje, ci je datum spravne zadany a ak nie, vypise o tom spravu    
 def dobryDatum(den, mesiac, rok, inyDen, inyMesiac, inyRok):
-    zaciatocny = 1901
-    konecny = 2100
     if rok in range(1901,2101):
         if mesiac == 1 or mesiac==3 or mesiac ==5 or mesiac ==7 or mesiac ==8 or mesiac==10 or mesiac==12:
             if den not in range(1,32):
@@ -121,12 +131,14 @@ def dobryDatum(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     if inyDen not in range(1,32):
         print ('deň je zle zadaný dátum')
 
-           
-def pocetDni(den, mesiac, rok, inyDen, inyMesiac, inyRok):
-    zaciatocny = 1901
-    konecny = 2100
-    februar = 28
 
+
+        
+
+# funkcia vypocita pocet dni od 1.1.1901 az po zadany datum      
+def pocetDni(den, mesiac, rok, inyDen, inyMesiac, inyRok):
+    februar = 28
+    # nasledujuci for cyklus prida pocet dni podla poctu prestupnych rokov k zadanemu roku
     pridaj = 0
     for i in range(1904, 2101, 4):
             if rok >= i:
@@ -139,6 +151,7 @@ def pocetDni(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     if rok-1901 == 4*x -1 
     pridaj = rok - 1901
     """
+
     if mesiac == 1:
         pocetDni = 365*(rok - 1901) + den + pridaj
         print('pocet dni od 1.1.1901 do ', den,'.',mesiac,'.',rok, '=', pocetDni)
@@ -146,6 +159,7 @@ def pocetDni(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     if mesiac == 2:
         pocetDni = 365*(rok - 1901) + 31 + den + pridaj
         print('pocet dni od 1.1.1901 do ', den,'.',mesiac,'.',rok, '=', pocetDni)
+
     if mesiac == 3:
         pocetDni = 365*(rok - 1901) + 31 + februar + den+ pridaj
         print('pocet dni od 1.1.1901 do ', den,'.',mesiac,'.',rok, '=', pocetDni) 
@@ -173,9 +187,11 @@ def pocetDni(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     if mesiac == 9:
         pocetDni = 365*(rok - 1901) + 31 + februar + 31 + 30 + 31 + 30 + 31 + 31 + den+ pridaj
         print('pocet dni od 1.1.1901 do ', den,'.',mesiac,'.',rok, '=', pocetDni) 
+
     if mesiac == 10:
         pocetDni = 365*(rok - 1901) + 31 + februar + 31 + 30 + 31 + 30 + 31 + 31 + 30 + den+ pridaj
         print('pocet dni od 1.1.1901 do ', den,'.',mesiac,'.',rok, '=', pocetDni) 
+
     if mesiac == 11:
         pocetDni = 365*(rok - 1901) + 31 + februar + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + den+ pridaj
         print('pocet dni od 1.1.1901 do ', den,'.',mesiac,'.',rok, '=', pocetDni) 
@@ -184,16 +200,15 @@ def pocetDni(den, mesiac, rok, inyDen, inyMesiac, inyRok):
         pocetDni = 365*(rok - 1901) + 31 + februar + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + den+ pridaj
         print('pocet dni od 1.1.1901 do ', den,'.',mesiac,'.',rok, '=', pocetDni)
 
-   
+    #vypocet poctu dni pre dalsi zadany datum
     if inyMesiac == 1:
         inyPocetDni = 365*(inyRok - 1901) + inyDen + pridaj
         print('pocet dni od 1.1.1901 do ', inyDen,'.',inyMesiac,'.',inyRok, '=', inyPocetDni)
 
-    
-
     if inyMesiac == 2:
         inyPocetDni = 365*(inyRok - 1901) + 31 + inyDen + pridaj
         print('pocet dni od 1.1.1901 do ', inyDen,'.',inyMesiac,'.',inyRok, '=', inyPocetDni)
+
     if inyMesiac == 3:
         inyPocetDni = 365*(inyRok - 1901) + 31 + februar + inyDen+ pridaj
         print('pocet dni od 1.1.1901 do ', inyDen,'.',inyMesiac,'.',inyRok, '=', inyPocetDni) 
@@ -221,9 +236,11 @@ def pocetDni(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     if inyMesiac == 9:
         inyPocetDni = 365*(inyRok - 1901) + 31 + februar + 31 + 30 + 31 + 30 + 31 + 31 + inyDen+ pridaj
         print('pocet dni od 1.1.1901 do ', inyDen,'.',inyMesiac,'.',inyRok, '=', inyPocetDni) 
+
     if inyMesiac == 10:
         inyPocetDni = 365*(inyRok - 1901) + 31 + februar + 31 + 30 + 31 + 30 + 31 + 31 + 30 + inyDen+ pridaj
         print('pocet dni od 1.1.1901 do ', inyDen,'.',inyMesiac,'.',inyRok, '=', inyPocetDni) 
+
     if inyMesiac == 11:
         inyPocetDni = 365*(inyRok - 1901) + 31 + februar + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + inyDen+ pridaj
         print('pocet dni od 1.1.1901 do ', inyDen,'.',inyMesiac,'.',inyRok, '=', inyPocetDni) 
@@ -231,6 +248,8 @@ def pocetDni(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     if inyMesiac == 12:
         inyPocetDni = 365*(inyRok - 1901) + 31 + februar + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + inyDen+ pridaj
         print('pocet dni od 1.1.1901 do ', inyDen,'.',inyMesiac,'.',inyRok, '=', inyPocetDni)
+
+
             
 def pocetDnivMesiaci(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     if mesiac == 1 or mesiac == 3 or mesiac==5 or mesiac ==7 or mesiac == 8 or mesiac == 10 or mesiac == 12:
@@ -241,6 +260,8 @@ def pocetDnivMesiaci(den, mesiac, rok, inyDen, inyMesiac, inyRok):
         return 28
     if mesiac == 2 and rok % 4 == 0:
         return 29
+
+
 
 def menoMesiaca(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     if mesiac == 1:
@@ -267,7 +288,10 @@ def menoMesiaca(den, mesiac, rok, inyDen, inyMesiac, inyRok):
         print('kalendar pre december', rok)
     else:
         print('restartujte program a zadajte spravny mesiac')
-        
+
+
+
+# nedorobene     
 def menoDna(den, mesiac, rok, inyDen, inyMesiac, inyRok):
 
     menoDna1, menoDna2, menoDna3, menoDna4, menoDna5, menoDna6, menoDna7 = 'utorok',  'streda', 'stvrtok', 'piatok', 'sobota', 'nedela', 'pondelok'
@@ -278,7 +302,7 @@ def menoDna(den, mesiac, rok, inyDen, inyMesiac, inyRok):
          
     
         
-        
+#nedorobene       
 def vypisKalendara(den, mesiac, rok, inyDen, inyMesiac, inyRok):
     print (' po  ut  st  st  pi  so  ne')
     prvyDenvMesiaci = 'utorok'
