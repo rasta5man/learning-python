@@ -18,3 +18,4 @@ for i in range(10):
     b = ri(0,10)
     c = ri(0,10)
     usporiadaj3(a,b,c)
+#testovy riadok pre git
