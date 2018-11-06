@@ -1,0 +1,8 @@
+novy:  Frederika ; Pavlova  ; zdravotnictvo; 2 ; 1512 ; C C E D B A A
+novy:  Danka   ; Jancekova; zdravotnictvo ; 1; 1513; A A B A B C A
+vyhod: id = 1504
+vyhod: id = 1509
+zmen: id = 1506 ; meno=Lucia ; priezvisko=Friedlova
+znamka: id = 1507 ; A B A D C D
+postup: priemer=2.5
+ukonci: rocnik=5

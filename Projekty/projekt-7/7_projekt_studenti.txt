@@ -1,0 +1,11 @@
+Janko; Hraško   ;matematika;2;1501;   A A Fx C A B
+Rasto; Kovac  ; programovanie; 1 ; 1502; A A A A A B B
+   Andrej ; Hipppik ; manazment; 4; 1503 ; B C E A A C C
+Brano ;   Milata; odbor hranie na automate    ; 5    ;   1504; Fx A A B D E E
+  Zdeno  ; Lutisan ; informatika a pocitace; 1 ; 1505 ; A A A C D B A
+Rado ; Smekal  ; Odbor rychle obcerstvenie; 3; 1506; C C A A E D
+Monika; Bagova  ; fyzikalna chemia ; 2 ; 1507 ; C A B B D D E
+Dusan   ; Seban  ; aplikovana ekonomia ; 5 ; 1508;  A A C B C D A
+Lucia ; Friedlova ; nakupovanie ; 1 ; 1509   ; D D E A A D E
+Viki ; Odintsova ; fotomodeling ; 3 ; 1510 ; E A A C B A D
+Monika ; Bezekova  ; divadelnictvo ; 2 ; 1511    ;   B C A A E D A
