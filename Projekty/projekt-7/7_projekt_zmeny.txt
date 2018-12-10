@@ -1,8 +1,14 @@
+# novy - prida do zoznamu dalsieho studenta
 novy:  Frederika ; Pavlova  ; zdravotnictvo; 2 ; 1512 ; C C E D B A A
 novy:  Danka   ; Jancekova; zdravotnictvo ; 1; 1513; A A B A B C A
+# vyhod - vyhodi studenta zo zoznamu s pridelenym ID   
 vyhod: id = 1504
 vyhod: id = 1509
-zmen: id = 1506 ; meno=Lucia ; priezvisko=Friedlova
+# zmen - zmeni atributy vybranemu studentovi
+zmen: id = 1506 ; meno = RADOVAN ; priezvisko = SMEKAL
+zmen: id = 1501 ; meno = PATRIK ; priezvisko = HLAVINA
 znamka: id = 1507 ; A B A D C D
-postup: priemer=2.5
-ukonci: rocnik=5
+# postup - studenti s danym priemerom postupia do vyssieho rocnika
+postup: priemer = 2.5
+# ukonci - pri uvedenom rocniku vyhodi studentov zo zoznamu
+ukonci: rocnik = 5

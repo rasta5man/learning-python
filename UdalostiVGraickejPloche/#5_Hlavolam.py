@@ -128,5 +128,6 @@ def vymen(event):
                 z += 50
     if zoznam == [1,2,3,4,5,0]:
         canvas.create_text(200,150, text = 'H U R A', font = 'arial 40 bold', fill = 'red')
+        canvas.unbind('<Button-1>')
         
 canvas.bind('<Button-1>', vymen)
