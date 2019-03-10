@@ -1,0 +1,41 @@
+8. projekt - 10 bodov
+
+Naprogramujte grafickú aplikáciu Skladaèka:
+
+    grafická plocha (ve¾kosti 800x600) je rozdelená na 2 èasti:
+        v ¾avej èasti šírky 200 sú porozkladané geometrické útvary, s ktorımi sa bude pracova a tie nieko¾ko ovládacích prvkov
+        zvyšok grafickej plochy (ve¾kosti 600x600) je pracovná oblas, v ktorej sa budú vytvára kompozície z tıchto útvarov 
+    rozdelenie na dve èasti zvıraznite, napr. farbou podkladu ¾avej èasti, alebo orámovaním, alebo zvislou deliacou èiarou a pod. 
+
+Ovládacie prvky v ¾avej èasti:
+
+    3 tlaèidlá (farebné obdåniky s textom, ktoré reagujú na kliknutie - nie sú to komponenty Button): preèítaj súbor, zapíš do súboru, zma pracovnú oblas
+
+    farbiace prvky: nieko¾ko prvkov rovnakého tvaru ale rôznych farieb: ak sa niektorı z nich potiahne na geometrickı útvar (v ¾avej alebo pracovnej oblasti), tak tento útvar sa prefarbí rovnakou farbou a tento farbiaci útvar sa potom automaticky vráti na svoju pôvodnú pozíciu
+        navrhnite takı tvar tıchto farbiacich prvkov, aby sa odlíšil od benıch geometrickıch útvarov, s ktorımi sa pracuje v aplikácii (mali by fungova podobne ako vedierka s farbou alebo farebné štetce) 
+
+Princíp práce programu:
+
+    pri štarte je v ¾avej èasti rovnomerne porozkladaná sada predpripravenıch útvarov (minimálne by to mali by: kruh s priemerom V, obdåniky so stranami Vx2V a 2VxV/2, štvorec so stranou V, rovnoramennı trojuholník so základòou aj vıškou V) - navrhnite aspoò jeden inı útvar, ktorého rozmer zodpovedá V (napr. trojuholník inıch rozmerov, lichobeník, ...)
+
+        V je konštanta programu (t.j. premenná, ktorej hodnota je nastavená na zaèiatku a ïalej sa v programe nemení), napr. V = 50
+        všetky útvary majú èierny obrys hrúbky 3 a sú vyfarbené nejakou farbou (nemajú priesvitné vnútro) 
+    pracovná oblas je zatia¾ prázdna
+    pouívate¾ môe ¾ubovo¾nı geometrickı útvar:
+        presúva z ¾avej do pracovnej plochy: po jeho pustení sa v ¾avej èasti na pôvodnom mieste objaví jeho presná kópia
+        presúva v pracovnej oblasti ale tak, aby z nej ani trochu netrèal - na hornej, dolnej a pravej hrane pracovnej oblasti ho ahanie nepustí ïalej
+        ak sa útvar z pracovnej oblasti presunie tak, e aspoò èiastoène zasahuje do ¾avej èasti (s predpripravenımi útvarmi a ovládacími prvkami), tak sa (po pustení tlaèidla myši) z grafickej plochy automaticky odstráni 
+    popritom môe pouívate¾ prefarbova ¾ubovo¾né útvary pomocou farbiacich prvkov
+    takto sa dajú vyrobi rôzne kompozície z predpripravenıch útvarov, tieto sa môu potom:
+        zapísa do súboru, tak aby sa neskôr dali
+        preèíta zo súboru 
+
+Program bude pracova s textovım súborom utvary.txt, ktorı je na zaèiatku prázdny:
+
+    "tlaèidlo" Zapíš do súboru prepíše momentálny obsah súboru informáciami o všetkıch geometrickıch útvaroch v pracovnej oblasti (ich pozície a farby)
+
+    "tlaèidlo" Preèítaj zo súboru najprv odstráni všetky útvary v pracovnej oblasti a potom preèíta zo súboru uloenú kompozíciu útvarov - takéto útvary na danıch pozíciach vytvorí aj so zapamätanımi farbami (s takto preèítanou kompozíciou sa dá ïalej pracova, prípadne znovu uloi do súboru) 
+
+Váš program bude obsahova len definície potrebnıch tried a jednu funkciu main(), ktorá zabezpeèí samotné vytvorenie grafickej plochy (s dvoma jej èasami, inicializáciou ¾avej èasti a pod.)
+
+    okrem tejto funkcie a definícií tried v súbore nebudú iadne iné globálne definície (ani funkcie ani premenné) 
