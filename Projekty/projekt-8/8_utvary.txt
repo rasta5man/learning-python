@@ -1,7 +1,3 @@
-stvorec,399,160,black
-kruh,431,375,green
-obdlznik,385,228,80,brown
-oval,440,215,yellow
-trojuholnik,402,273,white
-obdlznik1,405,271,80,red
-kruh,430,309,blue
+stvorec,382,235,blue
+trojuholnik,374,351,blue
+stvorec,450,238,blue
