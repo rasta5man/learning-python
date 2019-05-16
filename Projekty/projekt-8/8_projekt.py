@@ -218,7 +218,8 @@ class Tlacidlo(Utvar):      # definuje tri tlacidla z ovladacieho panelu (zapis 
                 subor.write(str(program.zoznam_vsetkych_utvarov[i]))
                 subor.write('\n')
             print('vsetky utvary uspesne zapisane')
-        subor.close()
+            subor.close()
+            self.utvar = None
 
     def zmaz_plochu(self, event):
         #prvych 15 objektov je ovladacich, preto sa iteruje az od cisla 16 az po koniec pola
@@ -274,6 +275,7 @@ class Program():
             and self.utvar.id != 21:
             if self.utvar.x>780 or self.utvar.x<220 or self.utvar.y>580 or self.utvar.y<20:
                 canvas.delete(self.utvar.id)
+                program.zoznam_vsetkych_utvarov.remove(self.utvar)
         if self.utvar.id == 9 or self.utvar.id == 10 or self.utvar.id == 11 or self.utvar.id==12 or self.utvar.id == 13 \
             or self.utvar.id == 14:
             if 780>event.x >250 and 580>event.y>20:
@@ -295,6 +297,8 @@ class Program():
         #print(self.utvar.x, self.utvar.y)
         
     def na_co_klikam(self, event):
+        # obidva sposoby su dobre
+        '''
         ix = len(self.zoznam_vsetkych_utvarov)-1
         while ix >= 0 and not self.zoznam_vsetkych_utvarov[ix].je_klik(event.x, event.y):
             ix -= 1
@@ -302,7 +306,12 @@ class Program():
             return None
         else:
             return self.zoznam_vsetkych_utvarov[ix]
-        
+        '''
+        for utvar in self.zoznam_vsetkych_utvarov:
+            if utvar.je_klik(event.x, event.y):
+                return utvar
+        return None
+
     def pridaj_utvar_do_skupiny(self, utvar):
         self.zoznam_vsetkych_utvarov.append(utvar)
     
