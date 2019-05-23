@@ -19,15 +19,15 @@ class Hodiny:
     def __init__(self, hodiny, minuty, sekundy=0):
         self.cas = 3600*hodiny + 60*minuty + sekundy
         self.bezi = None            #zapina a vypina casovac
-        self.canvas = tkinter.Canvas(width =400, height = 250)
+        self.canvas = tkinter.Canvas(width =500, height = 250)
         self.canvas.pack()
         self.id = self.canvas.create_text(200,150, text = self, font = 'arial 30')
-        
+		        
     def __str__(self):
         return '{}:{:02}:{:02}'.format(self.cas//3600, self.cas//60%60, self.cas%60)
 
     def nazov(self):
-        self.canvas.create_text(200, 30, text = 'Sachove hodiny', font='arial 40', fill = 'blue')
+        self.canvas.create_text(250, 30, text = 'Sachove hodiny', font='arial 40', fill = 'blue')
    
     def aktivuj(self):              
         self.canvas.bind_all('<space>', self.startCasovaca)
@@ -43,7 +43,7 @@ class Hodiny:
     def casovac(self):
         if self.bezi:
             if self.cas == 0:
-                self.canvas.create_text(200, 200, text = 'Cas vyprsal', font='arial, 50', fill = 'red')
+                self.canvas.create_text(250, 200, text = 'Cas vyprsal', font='arial, 50', fill = 'red')
                 self.bezi = False
                 Hodiny.pole[Hodiny.i%2].bezi = False
                 Hodiny.pole[Hodiny.i%2].canvas.unbind_all('<space>')
@@ -58,3 +58,4 @@ hod1.nazov()                        #vypise nazov iba na prvej ploche
 
 Hodiny.pole=[hod1,hod2] 
 hod1.aktivuj()                      # aktivuje zviazanie SPACE s funkciou startCasovaca
+hod1.canvas.mainloop()
