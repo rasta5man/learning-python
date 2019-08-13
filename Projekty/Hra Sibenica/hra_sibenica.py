@@ -65,6 +65,7 @@ def sibenica():
                 break
 
 canvas.bind('<Button-1>', zaciatok_hry)
+canvas.mainloop()
 
 '''
 from tkinter import *
