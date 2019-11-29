@@ -44,17 +44,8 @@ Zadefinujte a v programe využite minimálne tieto funkcie (parametre si zvoľte
 
 Môžete predpokladať, že 1.1.1901 bol utorok. Preto deň, ktorý je od tohto dátumu vzdialený násobok 7 je tiež utorok. Kontrolovať výpočty dátumov môžete napr. na stránke pracovný kalenár.
 
-Váš odovzdaný program musí začínať tromi riadkami komentárov:
-
-    # 3. projekt: kalendar
-    # autor: Janko Hraško
-    # dátum: 10.10.2013
-
 Používajte len také konštrukcie jazyka Python, ktoré sme sa zatiaľ učili. Nepoužívajte napr. zoznamy a ani iné štruktúry.
 '''
-
-
-
 
 
 # spustacia funkcia 

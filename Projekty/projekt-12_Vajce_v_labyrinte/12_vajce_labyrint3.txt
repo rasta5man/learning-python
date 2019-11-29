@@ -1,0 +1,22 @@
+xxxxxxxxxxxxxxxxxxxxxxxxx
+xv......................x
+xzzzzzzzzz.zzzzzzzzzzzz.x
+x......zz........zz.....x
+x.zzzz.zzzzzzzzz.zz.zzzzx
+x...zz...........zz.....x
+xzz.zzzzzzzzzzzzzzzzzzzzx
+xzz.zzzzzzzzzzzzzzzzzzzzx
+x...zz..................x
+x...zz..zzzzzzzzzzzzzz..x
+x...zz..zzzzzzzzzzzzzz..x
+x...zz..zzkkkkkkkkkkzz..x
+x...zz..zzzzzzzzzzzzzz..x
+x...zz..z...........zz..x
+x...zzzzzzzzzzzzzzzzzz..x
+x...zzzzzzzzzzzzzzzzzz..x
+x.......................x
+xxxxxxxxxxxxxxxxxxxxxxxxx
+
+-15 7 -8 0 -1 7 15 7 15 10 12 10 12 14 5 14 5 10 -1 10 -8 17 -15 10
+940 220
+780 540

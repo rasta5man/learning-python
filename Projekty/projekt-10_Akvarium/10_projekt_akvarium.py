@@ -1,3 +1,9 @@
+'''
+Rybicky v akvariu. Pravym tlacidlom pridate rybku. Rybky sa pohybuju nahodne. Lavym tlacidlo pridate potravu.
+Ked je rybka blizko k potrave otoci sa a zje ju. Zivot sa jej zvysi. Ked dlho neje z akvaria zmizne. Potrava na dne tiez mizne.
+Na vykreslovanie pomocou korytnacej grafiky je spraveny modul kor.py
+'''
+
 from kor import *
 import random
 
