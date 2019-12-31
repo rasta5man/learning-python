@@ -128,8 +128,10 @@ Používajte len také konštrukcie jazyka Python, ktoré sme sa zatiaľ učili.
 
 
 
+import os
 
-
+BASEDIR = os.getcwd()
+vsetkyKnihy = os.path.join(BASEDIR, '5_projekt_bestsellers.txt')
 
 # funkcia nacita zoznam knih zo suboru do pola (polozky pola su polia s hodnotami - 0=nazov knihy, 1=autor, 2=vydavatelstvo, 3=datum, 4=fiction )
 def zapisSuboru(subor):
@@ -150,7 +152,8 @@ def zapisSuboru(subor):
 def rozsahRokov():
     zaciatok = input('zadaj startovy rok: ')
     koniec = input('zadaj koncovy rok: ')
-    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
+    pole = zapisSuboru(vsetkyKnihy)
+    #pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
     print('\nToto su vsetky tituly v rokoch medzi', zaciatok, ' a ', koniec, ':\n')
     # nasledujuce dva for cykly vyberu z pola zoznamKnih datum a potom rozdelia na pole z 3 prvkov - mesiac, den a rok( napr.
     # datumy = ['8/30/2000', '9/24/1978', atd a potom datumyRozdelene=[['8','30','2000'],['9','24','1978'], atd...)
@@ -177,7 +180,7 @@ def rozsahRokov():
 def menoAutora():
     menoAutora = input('Zadaj meno autora (alebo časť mena): ')
     menoAutora = menoAutora.lower()
-    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
+    pole = zapisSuboru(vsetkyKnihy)
     print('\nToto su vsetky tituly od autora', menoAutora, ':\n')
     pocet = 0
     for i in range(len(pole)):
@@ -196,7 +199,7 @@ def menoAutora():
 def mesiacRok():
     mesiac = input('Zadaj mesiac (ako číslo 1-12): ')
     rok = input('zadaj rok: ')
-    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
+    pole = zapisSuboru(vsetkyKnihy)
     print('\nToto su vsetky tituly v ', mesiac, '. mesiaci a v ' , rok,  'roku :\n')
     # nasledujuce dva for cykly vyberu z pola zoznamKnih datum a potom rozdelia na pole z 3 prvkov - mesiac, den a rok( napr.
     # datumy = ['8/30/2000', '9/24/1978', atd a potom datumyRozdelene=[['8','30','2000'],['9','24','1978'], atd...)
@@ -222,7 +225,7 @@ def mesiacRok():
 def titul():
     titul = input('Zadaj titul (alebo časť titulu): ')
     titul = titul.lower()
-    pole = zapisSuboru('C:/Users/rasta5man/Disk Google/ucenie/Python_C/ProjektyWEB/5_projekt_bestsellers.txt')
+    pole = zapisSuboru(vsetkyKnihy)
     print('\nToto su vsetky tituly ', titul, ':\n')
     pocet = 0
     for i in range(len(pole)):
@@ -267,4 +270,5 @@ print()
 print('*****************************')
 print('Dakujeme za pouzitie programu')
 print('*****************************')
+
 input()
