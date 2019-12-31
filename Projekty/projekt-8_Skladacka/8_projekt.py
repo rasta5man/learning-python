@@ -159,7 +159,7 @@ class Vedierko(Utvar):
         self.r = 15
         self.povodneX = self.x
         self.povodneY = self.y
-        self.id = canvas.create_oval(self.x - self.r, self.y - self.r, self.x+self.r, self.y+self.r, fill = self.farba, width = 5)
+        self.id = canvas.create_oval(self.x - self.r, self.y - self.r, self.x+self.r, self.y+self.r, fill = self.farba, width = 3)
 
     def je_klik(self,x,y):
         return (self.x - x)**2 + (self.y-y)**2 < (self.r)**2
@@ -275,7 +275,6 @@ class Program():
             and self.utvar.id != 21:
             if self.utvar.x>780 or self.utvar.x<220 or self.utvar.y>580 or self.utvar.y<20:
                 canvas.delete(self.utvar.id)
-                program.zoznam_vsetkych_utvarov.remove(self.utvar)
         if self.utvar.id == 9 or self.utvar.id == 10 or self.utvar.id == 11 or self.utvar.id==12 or self.utvar.id == 13 \
             or self.utvar.id == 14:
             if 780>event.x >250 and 580>event.y>20:
@@ -339,8 +338,9 @@ class Program():
                 if (self.zoznam_vsetkych_utvarov[i].x - x)**2 + (self.zoznam_vsetkych_utvarov[i].y-y)**2 < (vyska/2)**2:
                     self.zoznam_vsetkych_utvarov[i].zmen_farbu(self.utvar.farba)
 
-
-canvas = tkinter.Canvas(height = 600, width = 800)
+root = tkinter.Tk()
+canvas = tkinter.Canvas(root, height = 600, width = 800)
+root.title('TK paint')
 canvas.pack()
     
 program = Program(800, 600, canvas, 200)
