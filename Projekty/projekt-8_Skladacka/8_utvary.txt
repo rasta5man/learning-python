@@ -1,3 +1,0 @@
-stvorec,472,191,blue
-oval,514,272,green
-trojuholnik,472,184,blue

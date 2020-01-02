@@ -1,0 +1,2 @@
+oval,373,325,blue
+oval,397,396,yellow
