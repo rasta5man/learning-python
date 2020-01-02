@@ -15,12 +15,12 @@ class Shape:                                        # base class for all shapes
         self.x += dx
         self.y += dy
         canvas.move(self.id, dx, dy)
-        #self.canvas.move(self.id, dx, dy)          # both of them work, I do not know which one is correct one
+        #self.canvas.move(self.id, dx, dy)          # both of them work
 
     def change_color(self, color):
         self.color = color
         canvas.itemconfig(self.id, fill = color)
-        #self.canvas.itemconfig(self.id, fill = color)    # both of them work, I do not know which one is correct one
+        #self.canvas.itemconfig(self.id, fill = color)    # both of them work
 
 
 class Square(Shape):
@@ -213,7 +213,7 @@ class Button(Shape):      # defines 3 buttons in control panel: write to file, r
             print ('File not Found')
 
     def write_to_file(self, event):
-        # objects are written to file from the list from 17 --> 0-15 are objects in control panel
+        # objects are written to file from the list from 17 --> 0-16 are objects in control panel
         with open('shapes.txt', 'w') as f:
             for i in range(17, len(program.list_of_all_objects)):
                 f.write(str(program.list_of_all_objects[i]))

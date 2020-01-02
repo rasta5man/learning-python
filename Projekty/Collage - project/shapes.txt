@@ -1,2 +1,9 @@
-oval,373,325,blue
-oval,397,396,yellow
+rectangle,394,166,80,red
+oval,450,247,blue
+square,376,280,white
+square,447,281,brown
+rectangle1,380,78,80,green
+rectangle1,443,79,80,yellow
+triangle,406,384,gray
+circle,358,206,blue
+circle,508,212,blue
