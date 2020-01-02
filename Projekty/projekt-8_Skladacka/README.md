@@ -23,7 +23,7 @@ In this way, various compositions can be made from offered shapes, which can the
  - written to a file so they can be used later
  - read from file
 
-The program works with the text file "utvary.txt", which is empty at the beginning.
+The program works with the text file "shapes.txt", which is empty at the beginning.
 Button "Save workspace" overwrites the current contents of the file with information about all geometric figures in the workspace.
 "Read from file" button removes all objects in the workspace, then reads the saved composition of the objects from the file 
 and place them into the workspace.
