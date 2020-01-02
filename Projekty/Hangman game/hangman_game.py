@@ -1,9 +1,3 @@
-'''
-Hra na hadanie nahodne vybranych slov. Zadavate pismena a ak sa character v slove nenachadza, odvisnete.
-Ak uhadnete, program vypise - Hura
-'''
-
-
 import tkinter, random
 canvas = tkinter.Canvas()
 canvas.pack()
