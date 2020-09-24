@@ -21,7 +21,10 @@ musí byť medzera a tiež medzi radmi vizitiek musí byť 1 riadok voľný.
 
 pocetVizitiek = int(input('zadaj pocet vizitiek: '))
 sirkaTlace = int(input('zadaj sirku tlace: '))
+if sirkaTlace > 210:
+    sirkaTlace = 210
 pocetVizitiekNaRiadok = sirkaTlace // 34 #dlzka vizitky + medzera
+
 
 while pocetVizitiek > pocetVizitiekNaRiadok:
     for i in range(pocetVizitiekNaRiadok):
